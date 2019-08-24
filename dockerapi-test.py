@@ -5,13 +5,15 @@
 
 URL='tcp://127.0.0.1:2375'
 
-import docker
+import sys
 import pprint
+
+import docker
 
 client = docker.DockerClient(base_url=URL)
 if not client.ping():
-    print("not ping...")
-    exit(1)
+    print("not pong...")
+    sys.exit(1)
 
 
 
@@ -30,6 +32,6 @@ def stats():
         pprint.pprint(stat_info)
 
 
-#client.containers.run("alpine","ping www.baidu.com",detach=True)
+client.containers.run("alpine","ping www.baidu.com",detach=True)
 
 stats()
