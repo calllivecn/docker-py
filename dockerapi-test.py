@@ -3,7 +3,7 @@
 # date 2018-07-20 15:01:37
 # author calllivecn <c-all@qq.com>
 
-URL='tcp://192.168.57.101:2375'
+URL='tcp://127.0.0.1:2375'
 
 import docker
 import pprint
